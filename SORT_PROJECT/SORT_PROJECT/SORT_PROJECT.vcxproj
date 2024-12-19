@@ -130,8 +130,10 @@
     <ClCompile Include="SORT_PROJECT.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Algorithms_Sort.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="SystemBaseCode.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
