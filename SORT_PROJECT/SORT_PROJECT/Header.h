@@ -3,7 +3,11 @@
 #include <string>
 #include <fstream>
 #include <chrono>
+#include <time.h>
+
 using namespace std;
+
+const int MAX_VALUE = 1e6;
 
 class Algorithms {
 private:

@@ -1,4 +1,6 @@
 ﻿  SORT_PROJECT.cpp
+D:\NGOC\SORT_PROJECT\SORT_PROJECT\SORT_PROJECT\Header.h(10,23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\NGOC\SORT_PROJECT\SORT_PROJECT\SORT_PROJECT\SystemBaseCode.h(121,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(276,16): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(276,16): warning C4244:         with
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(276,16): warning C4244:         [
@@ -8,4 +10,5 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.3380
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(276,16): warning C4244:         [
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(276,16): warning C4244:             _Ty1=int
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.40.33807\include\utility(276,16): warning C4244:         ]
+D:\NGOC\SORT_PROJECT\SORT_PROJECT\SORT_PROJECT\SystemBaseCode.h(151,1): warning C4715: 'generateArrayRequired': not all control paths return a value
   SORT_PROJECT.vcxproj -> D:\NGOC\SORT_PROJECT\SORT_PROJECT\x64\Debug\SORT_PROJECT.exe
