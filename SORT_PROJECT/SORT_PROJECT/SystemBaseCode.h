@@ -39,6 +39,10 @@ pair<long long,long long> MeasureAlgorithm(int* arr, int n, string Algorithm_Nam
 	else if (Algorithm_Name == "flash-sort") {
 		algorithm.flashSort(arr, n, comparisons);
 	}
+	else
+	{
+		cout << "Algorithm is not valid\n";
+	}
 	auto end_time = std::chrono::steady_clock::now();
 	auto duration = chrono::duration_cast<chrono::milliseconds>(end_time - start_time).count();
 	//cout << comparisons << "debug" << endl;
@@ -58,6 +62,21 @@ void printOutputVer_1(pair <long long,long long> runtime_comparison, string Outp
 	}
 	else if (Output_Require == "-time") {
 		cout << "Runnung Time: " << runtime_comparison.first << endl;
+	}
+}
+
+void printOutputVer_2(pair <long long, long long> runtime_comparison_1, pair <long long, long long> runtime_comparison_2, string Output_Require) {
+	if (Output_Require == "-both")
+	{
+		cout << "Running time: " << runtime_comparison_1.first << " | " << runtime_comparison_2.first << endl;
+		cout << "Comparisons: " << runtime_comparison_1.second << " | " << runtime_comparison_2.second << endl;
+	}
+	else if (Output_Require == "-comp")
+	{
+		cout << "Comparisons: " << runtime_comparison_1.second << " | " << runtime_comparison_2.second << endl;
+	}
+	else if (Output_Require == "-time") {
+		cout << "Runnung Time: " << runtime_comparison_1.first << " | " << runtime_comparison_2.first << endl;
 	}
 }
 
@@ -91,7 +110,6 @@ void Command_1(int arvc, char* arvg[]) {
 }
 
 int* generateArrayRequired(int Input_Size, string Input_Order, int* currentArray = NULL) {
-	srand(time(NULL));
 	Algorithms algorithm;
 	int comparison = 0;
 	// Allocate memory for array 
@@ -116,6 +134,11 @@ int* generateArrayRequired(int Input_Size, string Input_Order, int* currentArray
 	else if (Input_Order == "-rev") {
 		GenerateReverseData(arr, Input_Size);
 		return arr;
+	}
+	else 
+	{
+		cout << "Input order is not valid\n";
+		return NULL;
 	}
 }
 
@@ -204,8 +227,67 @@ void Command_3(int arvc, char* arvg[]) {
 	delete[] array_4;
 }
 
+void Command_4(int arvc, char* arvg[]) {
+	// Convert arguments to string
+	string algorithm1 = arvg[2];
+	string algorithm2 = arvg[3];
+	string input_file = arvg[4];
+
+	// Read the input file and create 2 arrays
+	int input_size = 0;
+	int* array1 = readInputArray(input_size, input_file);
+	int* array2 = readInputArray(input_size, input_file);
+
+	// Print the input on CMD
+	cout << "Algorithm: " << algorithm1 << " | " << algorithm2 << endl;
+	cout << "Input file: " << input_file << endl;
+	cout << "Input size: " << input_size << endl;
+	cout << "------------------------------------\n";
+
+	// Measure the runtime and comparison of 2 algorithms
+	pair<long long, long long> runtime_comparison_1 = MeasureAlgorithm(array1, input_size, algorithm1);
+	pair<long long, long long> runtime_comparison_2 = MeasureAlgorithm(array2, input_size, algorithm2);
+
+	// Print the runtime and comparison of 2 algorithms
+	printOutputVer_2(runtime_comparison_1, runtime_comparison_2, "-both");
+
+	// Release memory
+	delete[] array1;
+	delete[] array2;
+}
+
+void Command_5(int arvc, char* arvg[]) {
+	// Convert arguments to string
+	string algorithm1 = arvg[2];
+	string algorithm2 = arvg[3];
+	int input_size = stoi(arvg[4]);
+	string input_order = arvg[5];
+
+	// Create two arrays with given size and order
+	int* array1 = generateArrayRequired(input_size, input_order);
+	int* array2 = generateArrayRequired(input_size, input_order);
+
+	// Print the input on CMD
+	cout << "Algorithm: " << algorithm1 << " | " << algorithm2 << endl;
+	cout << "Input size: " << input_size << endl;
+	cout << "Input order: " << input_order << endl;
+	cout << "------------------------------------\n";
+
+	// Measure the runtime and comparison of 2 algorithms
+	pair<long long, long long> runtime_comparison_1 = MeasureAlgorithm(array1, input_size, algorithm1);
+	pair<long long, long long> runtime_comparison_2 = MeasureAlgorithm(array2, input_size, algorithm2);
+
+	// Print the runtime and comparison of 2 algorithms
+	printOutputVer_2(runtime_comparison_1, runtime_comparison_2, "-both");
+
+	// Release memory
+	delete[] array1;
+	delete[] array2;
+}
+
 void AlgorithmsMode(int arvc ,char* arvg[]) {
 	cout << "ALGORITHM MODE\n";
+
 	if (arvc == 5 && string(arvg[3]).find(".txt") != string::npos)
 	{
 		Command_1(arvc, arvg);
@@ -217,5 +299,18 @@ void AlgorithmsMode(int arvc ,char* arvg[]) {
 	else if (arvc == 6)
 	{
 		Command_2(arvc, arvg);
+	}
+}
+
+void CompareMode(int arvc, char* arvg[]) {
+	cout << "COMPARE MODE\n";
+
+	if (arvc == 5 && string(arvg[4]).find(".txt") != string::npos)
+	{
+		Command_4(arvc, arvg);
+	}
+	else if (arvc == 6)
+	{
+		Command_5(arvc, arvg);
 	}
 }

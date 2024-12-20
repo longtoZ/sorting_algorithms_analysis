@@ -27,7 +27,6 @@ int* readInputArray(int& n, string File_Name) {
 		input >> array[i];
 		//cout << array[i] << " ";
 	}
-	cout << endl;
 	input.close();
 	return array;
 }

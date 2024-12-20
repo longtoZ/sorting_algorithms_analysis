@@ -109,9 +109,14 @@ private:
 
     // Helper function for quick sort
     int partition(int* arr, int low, int high, long long& comparison) {
-        int pivot = arr[high];
-        int i = low - 1;
+        // Randomly choose a pivot index between low and high
+        int randomIndex = low + rand() % (high - low + 1);
 
+        // Swap the randomly chosen pivot with the last element
+        swap(arr[randomIndex], arr[high]);
+        int pivot = arr[high];
+
+        int i = low - 1; // Index of smaller element
         for (int j = low; j < high; j++, comparison++) {
             if (arr[j] < pivot) {
                 i++;
@@ -121,6 +126,7 @@ private:
         }
         comparison++;
 
+        // Place the pivot in its correct position
         swap(arr[i + 1], arr[high]);
         return i + 1;
     }
@@ -332,42 +338,45 @@ public:
             comparison++;
             return;
         }
+
         // Find the range of the array (max and min values)
         int maxVal = arr[0];
         int minVal = arr[0];
         for (int i = 1; i < n; ++i, comparison++) {
             if (arr[i] > maxVal) {
                 maxVal = arr[i];
-                if (arr[i] < minVal) minVal = arr[i];
-                comparison += 2;
+            }
+            else if (arr[i] < minVal) {
+                minVal = arr[i];
             }
             comparison++;
-            // Calculate the range of the data
-            int range = maxVal - minVal + 1;
+        }
 
-            // Create and initialize the count array
-            int* count = new int[range](); // Initialized to 0
+        // Calculate the range of the data
+        int range = maxVal - minVal + 1;
 
-            // Count the occurrences of each element
-            for (int i = 0; i < n; ++i, comparison++) {
-                ++count[arr[i] - minVal]; // Use offset for negative numbers
-            }
-            comparison++;
-            // Reconstruct the sorted array from the count array
-            int index = 0;
-            for (int i = 0; i < range; ++i, comparison++) {
-                while (count[i] > 0) {
-                    comparison++;
-                    arr[index++] = i + minVal; // Reapply the offset
-                    --count[i];
-                }
+        // Create and initialize the count array
+        int* count = new int[range](); // Initialized to 0
+
+        // Count the occurrences of each element
+        for (int i = 0; i < n; ++i, comparison++) {
+            ++count[arr[i] - minVal]; // Use offset for negative numbers
+        }
+
+        // Reconstruct the sorted array from the count array
+        int index = 0;
+        for (int i = 0; i < range; ++i, comparison++) {
+            while (count[i] > 0) {
+                arr[index++] = i + minVal; // Reapply the offset
+                --count[i];
                 comparison++;
             }
-            comparison++;
-            // Clean up dynamically allocated memory
-            delete[] count;
         }
+
+        // Clean up dynamically allocated memory
+        delete[] count;
     }
+
 
     // Radix sort
     void radixSort(int* arr, int n, long long& comparison) {
