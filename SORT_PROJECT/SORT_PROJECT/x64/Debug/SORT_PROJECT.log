@@ -1,9 +1,0 @@
-﻿  main.cpp
-C:\Users\VICTUS\Documents\code\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\header.h(12,23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  (compiling source file 'main.cpp')
-  
-C:\Users\VICTUS\Documents\code\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\baseFunctions.h(91,14): warning C4101: 'algorithm': unreferenced local variable
-  (compiling source file 'main.cpp')
-  
-C:\Users\VICTUS\Documents\code\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\utils.h(91,1): warning C4715: 'creatNewArrayFromGivenArrayAsRequired': not all control paths return a value
-  SORT_PROJECT.vcxproj -> C:\Users\VICTUS\Documents\code\sorting_algorithms_analysis\SORT_PROJECT\x64\Debug\SORT_PROJECT.exe
