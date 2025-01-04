@@ -1,37 +1,9 @@
-﻿  SORT_PROJECT.cpp
-C:\Users\VICTUS\source\repos\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\Header.h(11,23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  (compiling source file 'SORT_PROJECT.cpp')
+﻿  main.cpp
+C:\Users\VICTUS\Documents\code\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\header.h(12,23): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
   
-C:\Users\VICTUS\source\repos\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\SystemBaseCode.h(113,13): warning C4101: 'algorithm': unreferenced local variable
-  (compiling source file 'SORT_PROJECT.cpp')
+C:\Users\VICTUS\Documents\code\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\baseFunctions.h(91,14): warning C4101: 'algorithm': unreferenced local variable
+  (compiling source file 'main.cpp')
   
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,16): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,16): warning C4244:         with
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,16): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,16): warning C4244:             _Ty=__int64
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,16): warning C4244:         ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,16): warning C4244:         and
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,16): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,16): warning C4244:             _Ty1=int
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,16): warning C4244:         ]
-  (compiling source file 'SORT_PROJECT.cpp')
-      C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,16):
-      the template instantiation context (the oldest one first) is
-          C:\Users\VICTUS\source\repos\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\SystemBaseCode.h(100,35):
-          see reference to function template instantiation 'std::pair<int,int>::pair<__int64,__int64,0>(std::pair<__int64,__int64> &&) noexcept' being compiled
-              C:\Users\VICTUS\source\repos\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\SystemBaseCode.h(100,35):
-              see the first reference to 'std::pair<int,int>::pair' in 'Command_1'
-  
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,61): warning C4244: 'initializing': conversion from '_Ty' to '_Ty2', possible loss of data
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,61): warning C4244:         with
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,61): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,61): warning C4244:             _Ty=__int64
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,61): warning C4244:         ]
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,61): warning C4244:         and
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,61): warning C4244:         [
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,61): warning C4244:             _Ty2=int
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\utility(276,61): warning C4244:         ]
-  (compiling source file 'SORT_PROJECT.cpp')
-  
-C:\Users\VICTUS\source\repos\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\utils.h(91,1): warning C4715: 'creatNewArrayFromGivenArrayAsRequired': not all control paths return a value
-  SORT_PROJECT.vcxproj -> C:\Users\VICTUS\source\repos\sorting_algorithms_analysis\SORT_PROJECT\x64\Debug\SORT_PROJECT.exe
+C:\Users\VICTUS\Documents\code\sorting_algorithms_analysis\SORT_PROJECT\SORT_PROJECT\utils.h(91,1): warning C4715: 'creatNewArrayFromGivenArrayAsRequired': not all control paths return a value
+  SORT_PROJECT.vcxproj -> C:\Users\VICTUS\Documents\code\sorting_algorithms_analysis\SORT_PROJECT\x64\Debug\SORT_PROJECT.exe

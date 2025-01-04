@@ -24,6 +24,7 @@
     <ProjectGuid>{28e6382c-cc0f-4608-9f64-4e14f1594f2a}</ProjectGuid>
     <RootNamespace>SORTPROJECT</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>SORT_PROJECT</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -127,12 +128,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SORT_PROJECT.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Algorithms_Sort.h" />
-    <ClInclude Include="Header.h" />
-    <ClInclude Include="SystemBaseCode.h" />
+    <ClInclude Include="sortingAlgorithms.h" />
+    <ClInclude Include="header.h" />
+    <ClInclude Include="baseFunctions.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -1,5 +1,5 @@
 #pragma once
-#include "Header.h"
+#include "header.h"
 
 class Algorithms {
 private:
@@ -107,28 +107,39 @@ private:
         delete[] R;
     }
 
-    // Helper function for quick sort
+    // Helper function for quick sort using Hoare Partitioning
     int partition(int* arr, int low, int high, long long& comparison) {
-        // Randomly choose a pivot index between low and high
-        int randomIndex = low + rand() % (high - low + 1);
+		// Use the middle element as the pivot
+		int pivot = arr[(low + high) / 2];
 
-        // Swap the randomly chosen pivot with the last element
-        swap(arr[randomIndex], arr[high]);
-        int pivot = arr[high];
+		// Move the left pointer to the right until it finds an element >= pivot
+        int i = low - 1;
+        int j = high + 1;
 
-        int i = low - 1; // Index of smaller element
-        for (int j = low; j < high; j++, comparison++) {
-            if (arr[j] < pivot) {
+        while (true) {
+            // Move i to the right until arr[i] >= pivot
+            do {
                 i++;
-                swap(arr[i], arr[j]);
+                comparison++;
+            } while (arr[i] < pivot);
+			comparison++;
+
+            // Move j to the left until arr[j] <= pivot
+            do {
+                j--;
+                comparison++;
+            } while (arr[j] > pivot);
+			comparison++;
+
+            // If indices cross, partitioning is complete
+            if (i >= j) {
+                return j;
             }
             comparison++;
-        }
-        comparison++;
 
-        // Place the pivot in its correct position
-        swap(arr[i + 1], arr[high]);
-        return i + 1;
+            // Swap elements at i and j
+            swap(arr[i], arr[j]);
+        }
     }
 
     // Helper function for radix sort

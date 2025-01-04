@@ -1,6 +1,7 @@
 #pragma once
-#include "Header.h"
-#include "Algorithms_Sort.h"
+#include "header.h"
+#include "sortingAlgorithms.h"
+
 void writeOutputArray(int* arr, int n, string filename) {
 	ofstream output(filename);
 	if (!output.is_open()) {
@@ -14,8 +15,8 @@ void writeOutputArray(int* arr, int n, string filename) {
 	output.close();
 }
 
-int* readInputArray(int& n, string File_Name) {
-	ifstream input(File_Name);
+int* readInputArray(int& n, string fileName) {
+	ifstream input(fileName);
 	if (!input.is_open()) {
 		cout << "Can not open file\n";
 		return NULL;
@@ -25,7 +26,6 @@ int* readInputArray(int& n, string File_Name) {
 	for (int i = 0; i < n; i++)
 	{
 		input >> array[i];
-		//cout << array[i] << " ";
 	}
 	input.close();
 	return array;
