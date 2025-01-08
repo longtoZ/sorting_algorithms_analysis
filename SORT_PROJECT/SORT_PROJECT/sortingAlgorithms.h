@@ -206,7 +206,7 @@ public:
             if (j < 0) {
                 comparison++;
             }
-            else if (j < 0 && arr[j] <= key) comparison += 2;
+            else if (j >= 0 && arr[j] <= key) comparison += 2;
             arr[j + 1] = key;
         }
         comparison++;
